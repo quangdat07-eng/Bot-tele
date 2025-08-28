@@ -200,7 +200,7 @@ async def Botoes(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
         with open(f'files/{file}','r', errors='replace', encoding='utf-8') as dd:
 
-            ff =  list(map(lambda x: f'{x.split(':')[1]}:{x.split(':')[2]}', dd))
+            ff = list(map(lambda x: f"{x.split(':')[1]}:{x.split(':')[2]}", dd))
 
         fila = BytesIO(''.join(ff).encode('utf-8'))
 
@@ -287,4 +287,5 @@ if __name__ == "__main__":
 
     except:
         print('Parou - Reiniciar | Restart Stop')
+
 
