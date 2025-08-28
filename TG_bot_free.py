@@ -2,19 +2,6 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters, CallbackQueryHandler
 import requests, os, json, re
 from io import BytesIO
-import os
-import threading
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "Bot is running on Railway!"
-
-def run_web():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -265,11 +252,6 @@ def main():
     app.add_handler(CallbackQueryHandler(Botoes))
 
     print("Bot rodando...")
-    # chạy web server trên thread khác để Railway thấy port sống
-threading.Thread(target=run_web).start()
-
-# vẫn giữ polling như cũ
-application.run_polling()
     app.run_polling()
 
 
@@ -305,6 +287,7 @@ if __name__ == "__main__":
 
     except:
         print('Parou - Reiniciar | Restart Stop')
+
 
 
 
