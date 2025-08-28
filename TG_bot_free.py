@@ -278,7 +278,8 @@ def token():
 
 if __name__ == "__main__":
     try:
-        os.system('title Bot Free CLOUD')
+        
+        
 
         os.makedirs('files',exist_ok=True)
 
@@ -286,3 +287,4 @@ if __name__ == "__main__":
 
     except:
         print('Parou - Reiniciar | Restart Stop')
+
